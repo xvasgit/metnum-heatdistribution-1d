@@ -84,10 +84,21 @@ if __name__ == "__main__":
     plt.plot(
         posisi_x,
         T_akhir,
-        "r-",
-        marker="s",
+        "gray",
+        linestyle="-",
+        alpha=0.5,
         label=f"After (Stabil / Konvergen pada Iterasi ke-{total_iterasi})",
     )
+    sc = plt.scatter(
+        posisi_x,
+        T_akhir,
+        c=T_akhir,
+        cmap="coolwarm",
+        s=60,
+        edgecolors="black",
+        zorder=5,
+    )
+    plt.colorbar(sc, label="Temperatur (°C)")
 
     # Atur komponen grafik
     plt.title(
